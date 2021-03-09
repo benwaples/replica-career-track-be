@@ -5,7 +5,7 @@ app.use(express.json());
 
 // example route
 app.get('/', (req: Request, res: Response, next: NextFunction) => {
-  res.send('<h1>Hello World</h1>')
+  res.send(require('./utils/intro'))
 })
 
 app.use(require('./middleware/not-found'));
