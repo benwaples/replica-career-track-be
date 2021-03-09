@@ -3,7 +3,7 @@ export {}
 
 import { Request, Response, NextFunction, ErrorRequestHandler } from 'express'
 
-interface IsError {
+export interface IsError {
   status: number;
   message: string;
 }
