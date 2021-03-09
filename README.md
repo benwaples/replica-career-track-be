@@ -5,4 +5,5 @@
 1. Run `tsc -w` in the root of your project to have typescript compile when any changes are made to your projects
   
 Boom you're off an running
+
 ![celebrate](https://media.giphy.com/media/DhstvI3zZ598Nb1rFf/giphy.gif)
