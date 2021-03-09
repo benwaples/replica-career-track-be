@@ -3,8 +3,8 @@ const app = express();
 
 app.use(express.json());
 
-
-app.get('/hi', (req: Request, res: Response, next: NextFunction) => {
+// example route
+app.get('/', (req: Request, res: Response, next: NextFunction) => {
   res.send('<h1>Hello World</h1>')
 })
 
