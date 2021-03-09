@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 export {}
 
-import { Request, Response, NextFunction, ErrorRequestHandler } from 'express'
+import { Request, Response, NextFunction } from 'express'
 
 export interface IsError {
   status: number;
