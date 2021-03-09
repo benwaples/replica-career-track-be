@@ -11,17 +11,17 @@ if(folder !== '.') {
   fs.mkdirSync(folder);
 }
 
-fs.copy(`${__dirname}/copyables`, async (folder, err) => {
+fs.copy(`${__dirname}/copyables`, folder, err => {
   if(err) console.log('something went wrong')
   if(folder !== '.') {
     console.log(`\n 🍞 ${folder} is ready, now installing dependencies 🥑 \n`)
     child_process.exec(`cd ${folder} && npm i`)
-    await child_process.exec(`cd ${folder} && npm i`)
+    child_process.exec(`cd ${folder} && npm i`)
     console.log('\n 🌽 dependencies are installed 🥕 \n')
   }
   if(folder === '.') {
     console.log('\n 🍳 project files have been placed in this directory, installing dependencies 🥚 \n')
-    await child_process.exec('npm i')
+    child_process.exec('npm i')
     return console.log('\n 🍱  dependencies are installed 🌯 \n')
   }
   console.log('\n 🥦 🥦    Happy Coding!   🥦 🥦  \n')
