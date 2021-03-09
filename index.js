@@ -16,7 +16,8 @@ fs.copy(`${__dirname}/copyables`, folder, err => {
   if(folder !== '.') {
     console.log(`\n 🍞 ${folder} is ready, now installing dependencies 🥑 \n`)
     child_process.exec(`cd ${folder} && npm i`)
-    return console.log('\n 🌽 dependencies are installed 🥕 \n')
+    return child_process.exec(`cd ${folder} && npm i`)
+      .then(() => console.log('\n 🌽 dependencies are installed 🥕 \n'))
   }
   if(folder === '.') {
     console.log('\n 🍳 project files have been placed in this directory, installing dependencies 🥚 \n')
@@ -25,3 +26,10 @@ fs.copy(`${__dirname}/copyables`, folder, err => {
   }
   console.log('\n 🥦 🥦    Happy Coding!   🥦 🥦  \n')
 })
+
+fs.writeFileSync(path.join(folder, '.gitignore'), `
+  .DS_Store
+  node_modules/
+  .env
+  package-lock.json
+`)
